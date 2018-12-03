@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+D:\Spring\SpringBitStudy\workspace_bit_web\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1979388545.index
-220024413.index
-851691928.index
-963016268.index
-982268944.index
-1467643639.index
-468139229.index

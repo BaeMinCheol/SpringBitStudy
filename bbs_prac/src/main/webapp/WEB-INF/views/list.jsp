@@ -24,9 +24,11 @@
 				<tr>
 					<td>${list.bId}</td>
 					<td><a href="content_view?bId=${list.bId}">${list.bTitle}</a></td>
-					<td><%-- ${list.bDate} --%> <fmt:formatDate value="${list.bDate}" pattern="yyyy-MM-dd HH:mm"/></td>
+					<td><fmt:formatDate value="${list.bDate}" pattern="yyyy-MM-dd HH:mm"/></td>
 					<td>${list.bCount}</td>
 					<td><a href="update_view?bId=${list.bId}" class="btn btn-default" role="button">수정하기</a></td>
+			
+					<!-- 삭제하기 버튼을 클릭하면 해당하는 bId와 함께 delete url을 요청한다 -->
 					<td><a href="delete?bId=${list.bId}" class="btn btn-default" role="button">삭제하기</a></td>
 				</tr>
 			</c:forEach>

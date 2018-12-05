@@ -1,0 +1,5 @@
+package com.javalec.bbs_prac.dao;
+
+public interface IDao {
+
+}

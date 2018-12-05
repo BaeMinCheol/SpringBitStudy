@@ -1,0 +1,14 @@
+package com.bit.empapp.dao;
+
+import java.util.List;
+
+import com.bit.empapp.vo.EmpVO;
+
+public interface EmpMapper {
+	public  List<EmpVO>   allEmp();
+}
+
+
+
+
+

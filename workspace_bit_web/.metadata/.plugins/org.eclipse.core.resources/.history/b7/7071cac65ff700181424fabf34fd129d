@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javalec.bbs_prac.dao.IDao">
+   <select id="list" resultType="com.javalec.bbs_prac.dto.BDto">
+      SELECT * FROM BOARD ORDER BY 1 DESC
+   </select>
+
+   	<!-- resultType이 없다 -->
+	<delete id="delete">
+		DELETE FROM BOARD WHERE BID = #{param1}
+	</delete>
+   
+</mapper>

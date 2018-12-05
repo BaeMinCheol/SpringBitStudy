@@ -1,0 +1,57 @@
+package com.javalec.bbs_prac.controller;
+
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.javalec.bbs_prac.dao.IDao;
+
+@Controller
+	public class BController {
+		
+		private static final Logger logger = LoggerFactory.getLogger(BController.class);
+		
+		@Autowired
+		private SqlSession sqlSession;
+		
+		//list구현부분
+		@RequestMapping("/list")
+		public String list(Model model) {
+			logger.info("list()");
+			
+			IDao dao = sqlSession.getMapper(IDao.class);
+			model.addAttribute("list", dao.list());
+			return "list";
+		}
+		
+		// list랑 비교하면서 보자
+		// delete는 view에 정보를 넘겨줄 필요가 없고 dao를 통해 db를 조작만 하고 끝난다
+		// bId가 Int 인 것에 유의하자
+		// 조작이 끝나면 list 페이지로 넘어가게 한다
+
+		//delete구현부분
+		@RequestMapping("/delete")
+		public String list(HttpServletRequest request) {
+			logger.info("delete()");
+			
+			IDao dao = sqlSession.getMapper(IDao.class);
+			dao.delete(Integer.parseInt(request.getParameter("bId")));
+			
+			return "redirect:list";
+		}
+		
+		//글을 작성할 수 있는 Form 이 있는 공간
+		@RequestMapping("write_view")
+		public String write_view() {
+			logger.info("write_view()");
+			return "write_view";
+		}
+		
+	}

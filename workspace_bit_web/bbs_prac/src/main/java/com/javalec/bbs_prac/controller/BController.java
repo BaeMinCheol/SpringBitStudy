@@ -109,4 +109,13 @@ import com.javalec.bbs_prac.dao.IDao;
 			
 			return "redirect:list";
 		}
+		
+//		@RequestMapping("/uploadAjax")
+//		public String uploadAjax(HttpServletRequest request) {
+//			logger.info("uploadAjax()");
+//			
+//			IDao dao = sqlSession.getMapper(IDao.class);
+//			
+//			return uploadAjax(null);
+//		}
 	}

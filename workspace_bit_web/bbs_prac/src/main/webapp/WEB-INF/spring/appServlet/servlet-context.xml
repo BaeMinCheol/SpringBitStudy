@@ -24,5 +24,17 @@
 	<context:component-scan base-package="com.javalec.bbs_prac" />
 	
 	
-	
+	<!-- viewResolver bean과 파일업로드 경로를 추가 -->
+	<!-- 파일업로드에 필요한 bean -->
+<!-- 	<beans:bean id="mulitpartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> -->
+		<!-- 파일업로드 용량 -->
+<!-- 		<beans:property name="maxUploadSize" value="10485760"/> -->
+<!-- 	</beans:bean> -->
+	<!-- 파일업로드를 위한 디렉토리 설정 -->
+	<!-- String uploadPath = new String("업로드 경로") -->
+<!-- 	<beans:bean id="uploadPath" class="java.lang.String"> -->
+		<!-- constructor-arg : 생성자 매개변수 -->
+<!-- 		<beans:constructor-arg value="D:\Spring\SpringBitStudy\workspace_bit_web\bbs_prac\src\main\resources\upload"/> -->
+<!-- 	</beans:bean> -->
+<!-- 	<beans:alias name="spring.RegularCommonsMultipartResolver" alias="multipartResolver"/> -->
 </beans:beans>

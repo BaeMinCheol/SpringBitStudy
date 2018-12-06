@@ -23,7 +23,6 @@
 			<c:forEach items="${list}" var="list">
 				<tr>
 					<td><a href="content_view?bId=${list.bId}">${list.bTitle}</a></td>
-					<td>${list.bImage}</td>
 					<td><a href="content_view?bId=${list.bId}"><img src="${list.bImage}" width="30" height="30"/></a></td>
 					<td>${list.bCount}</td>			
 					<td><fmt:formatDate value="${list.bDate}" pattern="yyyy-MM-dd HH:mm"/></td>

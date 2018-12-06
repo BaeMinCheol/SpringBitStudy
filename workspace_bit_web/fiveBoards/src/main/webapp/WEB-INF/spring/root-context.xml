@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+	
+	<!-- 1. DB Connection을 위한 객체 생성 -->
+    <bean id="dataSource"
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+      lazy-init="false">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+        <property name="username" value="fiveboard" />
+        <property name="password" value="1234" />
+    </bean> 
+
+	<!-- 2. Mybatis DB 프로그램에서 사용할 객체 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- DB에서 실행할 sql 문장을 태그로 정의해 놓는다. -->
+        <!-- classpath 부분은 나중에 만들 mapper.xml 부분과 연결됩니다. 나중에 mapper 만들 때 다시 볼게요 -->
+		<property name="mapperLocations" value="classpath:com/javalec/board/dao/mapper/*.xml"/>
+	</bean>
+
+	<!-- 3. Mybatis DB 프로그램의 자동화 객체 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+	
+	<!-- dao 인터페이스를 빈객체로 등록 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.javalec.board.dao" />
+	</bean>
+	
+	<!-- 파일 다운로드기능 적용을 위한 bean 정의 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+</beans>

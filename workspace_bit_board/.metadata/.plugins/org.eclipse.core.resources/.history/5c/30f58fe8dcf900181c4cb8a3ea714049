@@ -1,0 +1,5 @@
+package com.javalec.board.service;
+
+public class ImageBoardService {
+
+}

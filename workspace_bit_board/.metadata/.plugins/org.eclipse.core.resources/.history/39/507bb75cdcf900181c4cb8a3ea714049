@@ -1,0 +1,5 @@
+package com.javalec.board.dao;
+
+public class ImageBoardDao {
+
+}

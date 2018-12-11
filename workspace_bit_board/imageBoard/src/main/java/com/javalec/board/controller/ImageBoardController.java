@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.javalec.board.dto.BoardDto;
-import com.javalec.board.service.BoardService;
+import com.javalec.board.service.ImageBoardService;
 
 @Controller
 @RequestMapping("/imageboard")
@@ -22,7 +22,7 @@ public class ImageBoardController {
 private static final Logger logger = LoggerFactory.getLogger(ImageBoardController.class);
 	
 	@Resource(name="imageBoardService")
-	private BoardService imageBoardService;
+	private 	 imageBoardService;
 	
 	// 사용자가 board/imageboard 로 url 요청
 	@RequestMapping("/list")
@@ -32,17 +32,6 @@ private static final Logger logger = LoggerFactory.getLogger(ImageBoardControlle
 		return "imageboard/list";
 	}
 	
-//	@RequestMapping(value="", params="select")
-//	public String list(HttpServletRequest request, Model model) {
-//		logger.info("imageboard_list() with search");
-//		
-//		System.out.println(request.getParameter("select"));
-//		System.out.println(request.getParameter("search"));
-//		
-//		model.addAttribute("list", imageBoardService.search(request.getParameter("select"), request.getParameter("search")));
-//		
-//		return "imageboard/list";
-//	}	
 	
 	@RequestMapping("/delete")
 	public String delete(HttpServletRequest request) {

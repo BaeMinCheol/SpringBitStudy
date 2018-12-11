@@ -31,5 +31,25 @@
 	<update id="update">
 		UPDATE BOARD SET BTITLE=#{bTitle}, BCONTENT=#{bContent}, BUSERNAME=#{bUsername}, BIMAGE=#{bImage} WHERE BID=#{bId}
 	</update>
+
+	<select id="search" resultType="com.javalec.board.dto.BoardDto">
+		SELECT * FROM FREEBOARD
+		WHERE 1=1 
+		<if test="param1 == 'all'">
+			AND BTITLE LIKE '%'||#{param2}||'%'
+			or BCONTENT LIKE '%'||#{param2}||'%'
+			or BUSERNAME LIKE '%'||#{param2}||'%'
+		</if>
+		<if test="param1 == 'writer'">
+			AND BUSERNAME LIKE '%'||#{param2}||'%'
+		</if>
+		<if test="param1 == 'title'">
+			AND BTITLE LIKE '%'||#{param2}||'%'
+		</if>
+		<if test="param1 == 'content'">
+			or BCONTENT LIKE '%'||#{param2}||'%'
+		</if>
+		ORDER BY 1 DESC
+	</select>
 	
 </mapper>

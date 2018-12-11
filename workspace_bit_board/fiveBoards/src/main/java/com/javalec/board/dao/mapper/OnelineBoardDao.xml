@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javalec.board.dao.OnelineBoardDao">
+	<select id="list" resultType="com.javalec.board.dto.BoardDto">
+		SELECT * FROM ONELINEBOARD ORDER BY 1 DESC
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM ONELINEBOARD WHERE BID=#{param1}
+	</delete>
+	
+	<insert id="write">
+		INSERT INTO ONELINEBOARD(BID, BCONTENT, BUSERNAME, BDATE) VALUES(ONELINEBOARD_SEQ.NEXTVAL, #{bContent}, #{bUsername}, SYSDATE)
+	</insert>
+	
+<!-- 	<select id="contentView" resultType="com.javalec.board.dto.BoardDto">
+		SELECT * FROM ONELINEBOARD WHERE BID=#{bId}
+	</select>
+	
+	<update id="contentCount">
+		UPDATE ONELINEBOARD SET BCOUNT=BCOUNT+1 WHERE BID=#{bId}
+	</update> -->
+	
+	<select id="updateView" resultType="com.javalec.board.dto.BoardDto">
+		SELECT * FROM ONELINEBOARD WHERE BID=#{bId}
+	</select>
+	
+	<update id="update">
+		UPDATE ONELINEBOARD SET BCONTENT=#{bContent} WHERE BID=#{bId}
+	</update>
+	
+	
+</mapper>

@@ -26,10 +26,14 @@
 				  <option value="content" >글내용</option>
 				</select>
 			</div>
+			<div class="form-group">
+				<label for="searchtext">검색 : </label>
+				<input type="text" id="searchtext" name="search" class="form-control"/> 
+				<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>			
+			</div>
 		</form>
 	</div>
-
-	<br />
+	<br/>
 		
 	<div class="container">
 		<table class="table table-hover">

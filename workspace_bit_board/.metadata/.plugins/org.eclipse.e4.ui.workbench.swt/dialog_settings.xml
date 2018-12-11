@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ShowViewDialog">
+		<item value="420" key="DIALOG_WIDTH"/>
+		<item value="1|D2Coding|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|-127|3|2|1|49|D2Coding" key="DIALOG_FONT_NAME"/>
+		<item value="org.springframework.ide.eclipse.ui.navigator.springExplorer" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="466" key="DIALOG_HEIGHT"/>
+		<item value="759" key="DIALOG_X_ORIGIN"/>
+		<item value="214" key="DIALOG_Y_ORIGIN"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="Spring"/>
+		</list>
+	</section>
+</section>

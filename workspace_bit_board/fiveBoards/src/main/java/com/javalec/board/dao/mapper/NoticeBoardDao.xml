@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javalec.board.dao.NoticeBoardDao">
+	<select id="list" resultType="com.javalec.board.dto.BoardDto">
+		SELECT * FROM NOTICEBOARD ORDER BY 1 DESC
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM NOTICEBOARD WHERE BID=#{param1}
+	</delete>
+	
+	<insert id="write">
+		INSERT INTO NOTICEBOARD VALUES(FREEBOARD_SEQ.NEXTVAL, #{bTitle}, #{bContent}, #{bUsername}, SYSDATE, 0)
+	</insert>
+	
+	<select id="contentView" resultType="com.javalec.board.dto.BoardDto">
+		SELECT * FROM NOTICEBOARD WHERE BID=#{bId}
+	</select>
+	
+	<update id="contentCount">
+		UPDATE NOTICEBOARD SET BCOUNT=BCOUNT+1 WHERE BID=#{bId}
+	</update>
+	
+	<select id="updateView" resultType="com.javalec.board.dto.BoardDto">
+		SELECT * FROM NOTICEBOARD WHERE BID=#{bId}
+	</select>
+	
+	<update id="update">
+		UPDATE NOTICEBOARD SET BTITLE=#{bTitle}, BCONTENT=#{bContent}, BUSERNAME=#{bUsername} WHERE BID=#{bId}
+	</update>
+	
+	<select id="search" parameterType="String" resultType="com.javalec.board.dto.BoardDto">
+		select * from noticeboard where bUsername like '%'||#{keyword}||'%' 
+		or bContent like '%'||#{keyword}||'%'
+		or bTitle like '%'||#{keyword}||'%'
+		order by bId desc
+	</select>
+	
+	
+</mapper>

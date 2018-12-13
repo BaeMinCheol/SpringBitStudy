@@ -1,7 +1,0 @@
-package com.javalec.bbs_prac.dao;
-
-import java.util.ArrayList;
-
-public interface IDao {
-	public ArrayList<BDto>list();
-}

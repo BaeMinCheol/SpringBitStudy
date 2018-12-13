@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\Bethel_laptop\Desktop\SpringBootHelloWorldExample-master\SpringBootHelloWorldExample"/>
+		<item value="C:\Users\Bethel_laptop\Desktop\SpringRestfulWebServicesWithJSONExample-master\SpringRestfulWebServicesWithJSONExample"/>
+		<item value="C:\Users\Bethel_laptop\Desktop\SpringRestfulWebServicesWithJSONExample-master"/>
+		<item value="C:\Users\Bethel_laptop\Desktop\SpringRestfulWebServicesExample"/>
+		<item value="C:\Users\Bethel_laptop\Desktop\fiveBoards"/>
+		<item value="C:\Users\Bethel_laptop\Desktop\spring02"/>
 		<item value="C:\Users\Bethel_laptop\Desktop\first"/>
 		<item value="C:\Users\Bethel_laptop\Desktop\springBoard2"/>
 		<item value="C:\Users\Bethel_laptop\Desktop\EmpDeptWebTest"/>

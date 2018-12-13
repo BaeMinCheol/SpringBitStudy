@@ -1,2 +1,4 @@
 #Tomcat publish data
-#Wed Dec 05 16:18:34 KST 2018
+#Thu Dec 13 17:52:06 KST 2018
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Bethel_laptop\\.m2\\repository\\org\\springframework\\spring-web\\4.3.8.RELEASE\\spring-web-4.3.8.RELEASE.jar=WEB-INF/lib/spring-web-4.3.8.RELEASE.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Bethel_laptop\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-websocket\\8.5.14\\tomcat-embed-websocket-8.5.14.jar=WEB-INF/lib/tomcat-embed-websocket-8.5.14.jar

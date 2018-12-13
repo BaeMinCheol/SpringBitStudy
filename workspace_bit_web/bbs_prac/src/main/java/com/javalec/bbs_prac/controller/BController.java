@@ -98,13 +98,7 @@ import com.javalec.bbs_prac.dao.IDao;
 			logger.info("update()");
 			
 			IDao dao = sqlSession.getMapper(IDao.class);
-			
-			System.out.println(Integer.parseInt(request.getParameter("bId")));
-			System.out.println(request.getParameter("bUsername"));
-			System.out.println(request.getParameter("bTitle"));
-			System.out.println(request.getParameter("bContent"));
-			System.out.println(request.getParameter("bImage"));
-			
+
 			dao.update(request.getParameter("bUsername"), request.getParameter("bTitle"), request.getParameter("bContent"), request.getParameter("bImage"), Integer.parseInt(request.getParameter("bId")));
 			
 			return "redirect:list";

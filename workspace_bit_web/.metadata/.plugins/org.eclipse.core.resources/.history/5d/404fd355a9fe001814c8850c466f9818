@@ -1,0 +1,8 @@
+package org.arpit.java2blog.service;
+
+import java.util.HashMap;
+
+public class CountryService {
+
+	static HashMap<Integer, Country> countryIdMap=getCountryIdMap();
+}
